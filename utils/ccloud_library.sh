@@ -945,7 +945,7 @@ function ccloud::create_ccloud_stack() {
     confluent environment use $ENVIRONMENT || exit 1
   fi
 
-  CLUSTER_NAME=${CLUSTER_NAME:-"confluent-cluster"}
+  CLUSTER_NAME=${CLUSTER_NAME:-"demo-kafka-cluster-$SERVICE_ACCOUNT_ID"}
   CLUSTER_CLOUD="${CLUSTER_CLOUD:-aws}"
   CLUSTER_REGION="${CLUSTER_REGION:-us-west-2}"
   CLUSTER=$(ccloud::maybe_create_and_use_cluster "$CLUSTER_NAME" $CLUSTER_CLOUD $CLUSTER_REGION)
@@ -1047,7 +1047,7 @@ function ccloud::destroy_ccloud_stack() {
   PRESERVE_ENVIRONMENT="${PRESERVE_ENVIRONMENT:-false}"
 
   ENVIRONMENT_NAME_PREFIX=${ENVIRONMENT_NAME_PREFIX:-"GSKO"}
-  CLUSTER_NAME=${CLUSTER_NAME:-"confluent-cluster"}
+  CLUSTER_NAME=${CLUSTER_NAME:-"demo-kafka-cluster-$SERVICE_ACCOUNT_ID"}
   CONFIG_FILE=${CONFIG_FILE:-"stack-configs/java-service-account-$SERVICE_ACCOUNT_ID.config"}
   KSQLDB_NAME=${KSQLDB_NAME:-"streaming-app-transform"}
 
