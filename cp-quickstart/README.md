@@ -10,8 +10,8 @@ You can use this quickstart demo to setup Confluent Cloud demo within your Confl
 
 # Prerequisites
 
-* Create a user account in Confluent Cloud(https://www.confluent.io/confluent-cloud/tryfree/)
-* Local install of the Confluent CLI(https://docs.confluent.io/confluent-cli/current/install.html) v2.2.0 or later.
+* Create a user account in [Confluent Cloud](https://www.confluent.io/confluent-cloud/tryfree/)
+* Local install of the [Confluent CLI](https://docs.confluent.io/confluent-cli/current/install.html) v2.2.0 or later.
 
 # Setup
 
