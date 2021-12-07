@@ -10,7 +10,27 @@ You can use this quickstart demo to setup Confluent Cloud demo within your Confl
 
 # Prerequisites
 
-* [Common demo prerequisites](https://github.com/confluentinc/examples#prerequisites)
+* Create a user account in Confluent Cloud(https://www.confluent.io/confluent-cloud/tryfree/)
+* Local install of the Confluent CLI(https://docs.confluent.io/confluent-cli/current/install.html) v2.2.0 or later.
+
+# Setup
+
+* Clone the examples GitHub repositoriy and check out the 7.0.0-post branch.
+```bash
+git clone https://github.com/hendrasutanto/examples
+cd examples
+git checkout 7.0.0-post
+```
+
+* Change directory to the cp-quickstart:
+```bash
+cd cp-quickstart
+```
+
+* Log in to Confluent Cloud with the command confluent login, and use your Confluent Cloud username and password. The --save argument saves your Confluent Cloud user login credentials or refresh token (in the case of SSO) to the local netrc file.
+```bash
+confluent login --save
+```
 
 # Run demo
 
