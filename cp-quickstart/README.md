@@ -2,51 +2,27 @@
 
 # Overview
 
-The Confluent Platform Quickstart demo is the automated version of the [Confluent Platform Quickstart](https://docs.confluent.io/platform/current/quickstart/index.html?utm_source=github&utm_medium=demo&utm_campaign=ch.examples_type.community_content.cp-quickstart)
+This Confluent Cloud Quickstart demo is based on the [Confluent Platform Quickstart](https://github.com/confluentinc/examples/tree/7.0.0-post/cp-quickstart)
 
 ![image](images/quickstart.png)
 
-## Additional Examples
-
-For additional examples that showcase streaming applications within an event streaming platform, please refer to [these demos](https://github.com/confluentinc/examples).
+You can use this quickstart demo to setup Confluent Cloud demo within your Confluent Cloud account.
 
 # Prerequisites
 
 * [Common demo prerequisites](https://github.com/confluentinc/examples#prerequisites)
-* [Confluent Platform 7.0](https://www.confluent.io/download/?utm_source=github&utm_medium=demo&utm_campaign=ch.examples_type.community_content.cp-quickstart)
 
 # Run demo
 
-## Confluent Platform
-
-* [Confluent Platform Quick Start](https://docs.confluent.io/platform/current/quickstart/ce-quickstart.html#ce-quickstart?utm_source=github&utm_medium=demo&utm_campaign=ch.examples_type.community_content.cp-quickstart) for the local tarball install of Confluent Platform: run the command below and then open your browser and navigate to the Control Center at http://localhost:9021/:
-
-```bash
-./start.sh
-```
-
-* [Confluent Platform Quick Start](https://docs.confluent.io/platform/current/quickstart/ce-docker-quickstart.html#ce-docker-quickstart?utm_source=github&utm_medium=demo&utm_campaign=ch.examples_type.community_content.cp-quickstart) for the Docker version of Confluent Platform: run the command below and then open your browser and navigate to the Control Center at http://localhost:9021/:
-
-```bash
-./start-docker.sh
-```
-
-* [Confluent Platform Quick Start](https://docs.confluent.io/platform/current/quickstart/cos-docker-quickstart.html#cos-docker-quickstart?utm_source=github&utm_medium=demo&utm_campaign=ch.examples_type.community_content.cp-quickstart) for the Docker version of Confluent Platform with community components only: run the command below:
-
-```bash
-./start-docker-community.sh
-```
-
 ## Confluent Cloud
 
-* This quickstart for Confluent Cloud is similar to those above for Confluent Platform, but leverages 100% Confluent Cloud services, including a [ksqlDB application](statements-cloud.sql) which builds streams and tables using Avro, Protobuf and JSON based formats. After logging into the Confluent CLI, run the command below and open your browser navigating to https://confluent.cloud. Note: the demo creates real cloud resources and incurs charges.
+* This quickstart for Confluent Cloud leverages 100% Confluent Cloud services, including a [ksqlDB application](statements-cloud.sql) which builds streams and tables using Avro, Protobuf and JSON based formats. After logging into the Confluent CLI, run the command below and open your browser navigating to https://confluent.cloud. Note: the demo creates real cloud resources and incurs charges.
 
 ```bash
 ./start-cloud.sh
 ```
 
-* The first 20 users to sign up for [Confluent Cloud](https://www.confluent.io/confluent-cloud/?utm_source=github&utm_medium=demo&utm_campaign=ch.examples_type.community_content.clients-ccloud) and use promo code ``C50INTEG`` will receive an additional $50 free usage ([details](https://www.confluent.io/confluent-cloud-promo-disclaimer/?utm_source=github&utm_medium=demo&utm_campaign=ch.examples_type.community_content.clients-ccloud)).
-
+* The above command will create a new environment in Confluent Cloud with the name "GSKO". If you have an existing environment with the same name, the script will fail to run.
 
 ### Advanced usage
 
@@ -62,3 +38,13 @@ Here are the variables and their default values:
 | --- | --- |
 | CLUSTER_CLOUD | aws |
 | CLUSTER_REGION | us-west-2 |
+
+### Cleaning Up
+
+To destroy this demo and its Confluent Cloud resources, call the bash script stop-cloud.sh and pass in the client propoerties file auto-generated in the step above. By Default, this deletes all resources, including the Confluent Cloud environment specified by the service account ID in the configuration file.
+
+```bash
+./stop-cloud.sh stack-configs/java-service-account-<SERVICE_ACCOUNT_ID>.config
+```
+
+Any Confluent Cloud example uses real Confluent Cloud resources. After you are done running a Confluent Cloud example, manually verify that all Confluent Cloud resources are destroyed to avoid unexpected charges.
