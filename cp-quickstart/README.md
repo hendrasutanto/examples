@@ -15,7 +15,7 @@ You can use this quickstart demo to setup Confluent Cloud demo within your Confl
 
 # Setup
 
-* Clone the examples GitHub repositoriy and check out the 7.0.0-post branch.
+* Clone the examples GitHub repository and check out the 7.0.0-post branch.
 ```bash
 git clone https://github.com/hendrasutanto/examples
 cd examples
